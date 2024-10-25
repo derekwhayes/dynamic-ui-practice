@@ -30,14 +30,25 @@ const slideshow = () => {
     dots[slideIndex].style.backgroundColor = "#46f511";
   };
 
+  const slideTimeout = () => {
+    index++;
+    showSlide(index);
+  };
+
+  let skipSlide = setInterval(slideTimeout, 5000);
+
   showSlide(index);
 
   next.addEventListener("click", () => {
     index++;
+    clearInterval(skipSlide);
+    skipSlide = setInterval(slideTimeout, 5000);
     showSlide(index);
   });
   prev.addEventListener("click", () => {
     index--;
+    clearInterval(skipSlide);
+    skipSlide = setInterval(slideTimeout, 5000);
     showSlide(index);
   });
 
@@ -45,6 +56,8 @@ const slideshow = () => {
   for (let i = 0; i < dots.length; i++) {
     dots[i].addEventListener("click", () => {
       index = i;
+      clearInterval(skipSlide);
+      skipSlide = setInterval(slideTimeout, 5000);
       showSlide(index);
     });
   }
