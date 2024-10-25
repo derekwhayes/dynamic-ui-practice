@@ -35,6 +35,8 @@ img {
   height: auto;
 }
 
+/* DROPDOWN */
+
 button {
   width: 300px;
   margin: 3rem;
@@ -54,4 +56,43 @@ button {
 
 li {
   padding: 0.2rem;
+}
+
+/* CAROUSEL */
+
+.slideshow-container {
+  margin: 3rem auto;
+  max-width: 800px;
+  position: relative;
+
+}
+
+.slide {
+  display: none;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 4 / 2.5;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.152);
+}
+.next {
+  right: 0;
+}
+
+.dot {
+  cursor: pointer;
+  background-color: #444;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
 }
